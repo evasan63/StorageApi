@@ -2,12 +2,12 @@
 {
     public class Product
     {
-        private int Id { get; set; }
-        private string Name { get; set; }
-        private int Price { get; set; }
-        private string Category { get; set; }
-        private string Shelf { get; set; }
-        private int Count { get; set; }
-        private string Description { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Price { get; set; }
+        public string Category { get; set; }
+        public string Shelf { get; set; }
+        public int Count { get; set; }
+        public string Description { get; set; }
     }
 }
