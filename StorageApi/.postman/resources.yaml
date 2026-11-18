@@ -1,7 +1,9 @@
-# Use this workspace to collaborate
 workspace:
   id: 12c2cdbb-212d-44a6-8cf2-ba917c8cb935
-
 localResources:
   specs:
     - ../obj/Debug/net10.0/EndpointInfo/StorageApi.json
+    - ../C:/Users/evasa/source/repos/StorageApi/StorageApi/obj/Debug/net10.0/EndpointInfo/StorageApi.json
+resourceNameMappings:
+  specs:
+    - ../obj/Debug/net10.0/EndpointInfo/StorageApi.json: StorageApi.json
