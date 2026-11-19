@@ -7,7 +7,8 @@ namespace StorageApi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            var connectionString = builder.Configuration.GetConnectionString("StorageApiContext") ?? throw new InvalidOperationException("Connection string 'StorageApiContext' not found.");
+            var connectionString = builder.Configuration.GetConnectionString("StorageApiContext") ?? 
+                throw new InvalidOperationException("Connection string 'StorageApiContext' not found.");
 
             builder.Services.AddDbContext<StorageApiContext>(options => options.UseSqlServer(connectionString));
 
@@ -17,18 +18,25 @@ namespace StorageApi
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
 
+            // Lägg till Swagger
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
+
+                // Aktivera Swagger
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
 
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

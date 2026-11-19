@@ -2,5 +2,5 @@ using Microsoft.EntityFrameworkCore;
 
 public class StorageApiContext(DbContextOptions<StorageApiContext> options) : DbContext(options)
 {
-    public DbSet<StorageApi.Models.Product> Product { get; set; } = default!;
+    public DbSet<StorageApi.DTOs.ProductDto> Products { get; set; } = default!;
 }
